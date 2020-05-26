@@ -8,7 +8,7 @@ module.exports = function binance (conf) {
   var public_client, authed_client
 
   function publicClient () {
-    if (!public_client) public_client = new ccxt.binance({ 'apiKey': '', 'secret': '', 'options': { 'adjustForTimeDifference': true } })
+    if (!public_client) public_client = new ccxt.binanceus({ 'apiKey': '', 'secret': '', 'options': { 'adjustForTimeDifference': true } })
     return public_client
   }
 
@@ -17,7 +17,7 @@ module.exports = function binance (conf) {
       if (!conf.binance || !conf.binance.key || conf.binance.key === 'YOUR-API-KEY') {
         throw new Error('please configure your Binance credentials in ' + path.resolve(__dirname, 'conf.js'))
       }
-      authed_client = new ccxt.binance({ 'apiKey': conf.binance.key, 'secret': conf.binance.secret, 'options': { 'adjustForTimeDifference': true }, enableRateLimit: true })
+      authed_client = new ccxt.binanceus({ 'apiKey': conf.binance.key, 'secret': conf.binance.secret, 'options': { 'adjustForTimeDifference': true }, enableRateLimit: true })
     }
     return authed_client
   }

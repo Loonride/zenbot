@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 let ccxt = require('ccxt')
 
-new ccxt.binance().fetch_markets().then(function(markets) {
+new ccxt.binanceus().fetch_markets().then(function(markets) {
   var products = []
 
   var products = markets.map(function (market) {
